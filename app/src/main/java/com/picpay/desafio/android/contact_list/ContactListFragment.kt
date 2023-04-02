@@ -14,6 +14,7 @@ import com.picpay.desafio.android.data.network.PicPayService
 import com.picpay.desafio.android.databinding.FragmentContactListBinding
 import com.picpay.desafio.android.domain.model.User
 import com.picpay.desafio.android.util.toggleVisibility
+import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,6 +22,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@AndroidEntryPoint
 class ContactListFragment: Fragment() {
     private lateinit var adapter: ContactListAdapter
     private var binding: FragmentContactListBinding? = null
