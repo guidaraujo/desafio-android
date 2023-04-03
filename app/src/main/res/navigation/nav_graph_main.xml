@@ -6,7 +6,7 @@
     app:startDestination="@id/userListFragment">
     <fragment
         android:id="@+id/userListFragment"
-        android:name="com.picpay.desafio.android.contact_list.ContactListFragment"
+        android:name="com.picpay.desafio.android.presentation.contact_list.ContactListFragment"
         android:label="UserListFragment"
         tools:layout="@layout/fragment_contact_list" />
 </navigation>
