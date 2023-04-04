@@ -1,11 +1,8 @@
-package com.picpay.desafio.android
+package com.picpay.desafio.android.util
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.BoundedMatcher
-import androidx.test.espresso.matcher.ViewMatchers
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 
@@ -24,16 +21,5 @@ object RecyclerViewMatchers {
             val viewHolder = item?.findViewHolderForAdapterPosition(position) ?: return false
             return itemMatcher.matches(viewHolder.itemView)
         }
-    }
-
-    fun checkRecyclerViewItem(resId: Int, position: Int, withMatcher: Matcher<View>) {
-        Espresso.onView(ViewMatchers.withId(resId)).check(
-            ViewAssertions.matches(
-                atPosition(
-                    position,
-                    ViewMatchers.hasDescendant(withMatcher)
-                )
-            )
-        )
     }
 }

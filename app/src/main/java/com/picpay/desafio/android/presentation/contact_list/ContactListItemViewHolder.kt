@@ -10,17 +10,19 @@ class ContactListItemViewHolder(
     private val binding: ListItemUserBinding
 ): RecyclerView.ViewHolder(binding.root) {
     fun bind(user: User) = with(binding) {
-        name.text = user.name
-        username.text = user.username
+        textName.text = user.name
+        textUsername.text = user.username
         progressBar.setVisible(true)
-        picture.load(
-            imageURL = user.imageURL,
-            success = {
-                progressBar.setVisible(false)
-            },
-            failure = {
-                progressBar.setVisible(false)
-            }
-        )
+        user.imageURL?.let { imageURL ->
+            imageProfile.load(
+                imageURL = imageURL,
+                success = {
+                    progressBar.setVisible(false)
+                },
+                failure = {
+                    progressBar.setVisible(false)
+                }
+            )
+        }
     }
 }
